@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="zero@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="dengru_tb"/>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="musicdb"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="paotui"/>
+    <schema id="7" parent="1" name="qimo"/>
+    <schema id="8" parent="1" name="test"/>
+    <schema id="9" parent="1" name="yi_db"/>
+    <schema id="10" parent="1" name="zero">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="11" parent="1" name="zhuoy"/>
+    <table id="12" parent="10" name="appointment"/>
+    <table id="13" parent="10" name="author"/>
+    <table id="14" parent="10" name="blog"/>
+    <table id="15" parent="10" name="comment"/>
+    <table id="16" parent="10" name="dept"/>
+    <table id="17" parent="10" name="e"/>
+    <table id="18" parent="10" name="hospital"/>
+    <table id="19" parent="10" name="mediciner"/>
+    <table id="20" parent="10" name="student"/>
+    <table id="21" parent="10" name="t_customer"/>
+    <table id="22" parent="10" name="t_order"/>
+    <table id="23" parent="10" name="user"/>
+    <routine id="24" parent="10" name="procGetNumOfComments">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="25" parent="10" name="procInsertAppoint">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <column id="26" parent="12" name="aid">
+      <Position>1</Position>
+      <DataType>INT(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="27" parent="12" name="u_id">
+      <Position>2</Position>
+      <DataType>INT(10)|4</DataType>
+    </column>
+    <column id="28" parent="12" name="patient_id">
+      <Position>3</Position>
+      <DataType>INT(10)|4</DataType>
+    </column>
+    <column id="29" parent="12" name="m_id">
+      <Position>4</Position>
+      <DataType>INT(10)|4</DataType>
+    </column>
+    <column id="30" parent="12" name="visit_time">
+      <Position>5</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <column id="31" parent="12" name="visit_seq">
+      <Position>6</Position>
+      <DataType>INT(10)|4</DataType>
+    </column>
+    <key id="32" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>aid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="33" parent="12" name="fk_user">
+      <ColNames>u_id</ColNames>
+      <RefSchemaName>zero</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <foreign-key id="34" parent="12" name="fk_patient">
+      <ColNames>patient_id</ColNames>
+      <RefSchemaName>zero</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <foreign-key id="35" parent="12" name="fk_mediciner">
+      <ColNames>m_id</ColNames>
+      <RefSchemaName>zero</RefSchemaName>
+      <RefTableName>mediciner</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>mid</RefColNames>
+    </foreign-key>
+    <column id="36" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>INT(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="37" parent="13" name="username">
+      <Position>2</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <column id="38" parent="13" name="password">
+      <Position>3</Position>
+      <DataType>VARCHAR(10)|12</DataType>
+    </column>
+    <column id="39" parent="13" name="email">
+      <Position>4</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <column id="40" parent="13" name="address">
+      <Position>5</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <column id="41" parent="13" name="phone">
+      <Position>6</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <key id="42" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="43" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>INT(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="44" parent="14" name="title">
+      <Position>2</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <column id="45" parent="14" name="content">
+      <Position>3</Position>
+      <DataType>VARCHAR(200)|12</DataType>
+    </column>
+    <column id="46" parent="14" name="create_time">
+      <Position>4</Position>
+      <DataType>DATE(10)|91</DataType>
+    </column>
+    <column id="47" parent="14" name="type">
+      <Position>5</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <column id="48" parent="14" name="author_id">
+      <Position>6</Position>
+      <DataType>INT(10)|4</DataType>
+    </column>
+    <key id="49" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="50" parent="14" name="fk_author">
+      <ColNames>author_id</ColNames>
+      <RefSchemaName>zero</RefSchemaName>
+      <RefTableName>author</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="51" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>INT(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="52" parent="15" name="content">
+      <Position>2</Position>
+      <DataType>VARCHAR(200)|12</DataType>
+    </column>
+    <column id="53" parent="15" name="postDate">
+      <Position>3</Position>
+      <DataType>DATE(10)|91</DataType>
+    </column>
+    <column id="54" parent="15" name="blog_id">
+      <Position>4</Position>
+      <DataType>INT(10)|4</DataType>
+    </column>
+    <key id="55" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="56" parent="15" name="fk_blog">
+      <ColNames>blog_id</ColNames>
+      <RefSchemaName>zero</RefSchemaName>
+      <RefTableName>blog</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="57" parent="16" name="did">
+      <Position>1</Position>
+      <DataType>INT(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="58" parent="16" name="d_name">
+      <Position>2</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="16" name="d_spec">
+      <Position>3</Position>
+      <DataType>VARCHAR(500)|12</DataType>
+    </column>
+    <column id="60" parent="16" name="p_did">
+      <Position>4</Position>
+      <DataType>INT(10)|4</DataType>
+    </column>
+    <index id="61" parent="16" name="unique_dname">
+      <ColNames>d_name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="62" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>did</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="63" parent="16" name="fk_dept">
+      <ColNames>p_did</ColNames>
+      <RefSchemaName>zero</RefSchemaName>
+      <RefTableName>dept</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>did</RefColNames>
+    </foreign-key>
+    <column id="64" parent="17" name="name">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="65" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="66" parent="18" name="hid">
+      <Position>1</Position>
+      <DataType>INT(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="67" parent="18" name="h_name">
+      <Position>2</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="18" name="address">
+      <Position>3</Position>
+      <DataType>VARCHAR(30)|12</DataType>
+    </column>
+    <column id="69" parent="18" name="grade">
+      <Position>4</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <index id="70" parent="18" name="unique_hname">
+      <ColNames>h_name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="71" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>hid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="72" parent="19" name="mid">
+      <Position>1</Position>
+      <DataType>INT(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="73" parent="19" name="m_name">
+      <Position>2</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="74" parent="19" name="gender">
+      <Position>3</Position>
+      <DataType>VARCHAR(10)|12</DataType>
+    </column>
+    <column id="75" parent="19" name="title">
+      <Position>4</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <column id="76" parent="19" name="m_spec">
+      <Position>5</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <column id="77" parent="19" name="surgery_weekday">
+      <Position>6</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <column id="78" parent="19" name="limit_visits">
+      <Position>7</Position>
+      <DataType>INT(10)|4</DataType>
+    </column>
+    <column id="79" parent="19" name="hospital">
+      <Position>8</Position>
+      <DataType>INT(10)|4</DataType>
+    </column>
+    <column id="80" parent="19" name="dept">
+      <Position>9</Position>
+      <DataType>INT(10)|4</DataType>
+    </column>
+    <key id="81" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>mid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="82" parent="19" name="fk_hospital">
+      <ColNames>hospital</ColNames>
+      <RefSchemaName>zero</RefSchemaName>
+      <RefTableName>hospital</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>hid</RefColNames>
+    </foreign-key>
+    <foreign-key id="83" parent="19" name="fk_deptname">
+      <ColNames>dept</ColNames>
+      <RefSchemaName>zero</RefSchemaName>
+      <RefTableName>dept</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>did</RefColNames>
+    </foreign-key>
+    <column id="84" parent="20" name="ID">
+      <Position>1</Position>
+      <DataType>INT(10)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="85" parent="20" name="name">
+      <Position>2</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <column id="86" parent="20" name="sex">
+      <Position>3</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <column id="87" parent="20" name="score">
+      <Position>4</Position>
+      <DataType>INT(10)|4</DataType>
+    </column>
+    <key id="88" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="89" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>INT(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="90" parent="21" name="name">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <column id="91" parent="21" name="age">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <column id="92" parent="21" name="tel">
+      <Position>4</Position>
+      <DataType>DATE(10)|91</DataType>
+    </column>
+    <key id="93" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="94" parent="22" name="id">
+      <Position>1</Position>
+      <DataType>INT(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="95" parent="22" name="order_number">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <column id="96" parent="22" name="order_price">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|12</DataType>
+    </column>
+    <column id="97" parent="22" name="customer">
+      <Position>4</Position>
+      <DataType>DATE(10)|91</DataType>
+    </column>
+    <key id="98" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="99" parent="23" name="uid">
+      <Position>1</Position>
+      <DataType>INT(10)|4</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="100" parent="23" name="username">
+      <Position>2</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="101" parent="23" name="pwd">
+      <Position>3</Position>
+      <DataType>VARCHAR(10)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="102" parent="23" name="uname">
+      <Position>4</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="103" parent="23" name="gender">
+      <Position>5</Position>
+      <DataType>VARCHAR(2)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="104" parent="23" name="identity">
+      <Position>6</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <column id="105" parent="23" name="mobile">
+      <Position>7</Position>
+      <DataType>VARCHAR(20)|12</DataType>
+    </column>
+    <key id="106" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>uid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <argument id="107" parent="24" name="_title">
+      <Position>1</Position>
+      <DataType>VARCHAR(50)|12</DataType>
+    </argument>
+    <argument id="108" parent="24" name="numOfComments">
+      <Position>2</Position>
+      <DataType>INT(10)|4</DataType>
+    </argument>
+    <argument id="109" parent="25" name="_u_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4</DataType>
+    </argument>
+    <argument id="110" parent="25" name="_patient_id">
+      <Position>2</Position>
+      <DataType>INT(10)|4</DataType>
+    </argument>
+    <argument id="111" parent="25" name="_m_id">
+      <Position>3</Position>
+      <DataType>INT(10)|4</DataType>
+    </argument>
+    <argument id="112" parent="25" name="_visit_time">
+      <Position>4</Position>
+      <DataType>VARCHAR(50)|12</DataType>
+    </argument>
+    <argument id="113" parent="25" name="available">
+      <Position>5</Position>
+      <DataType>INT(10)|4</DataType>
+    </argument>
+  </database-model>
+</dataSource>
